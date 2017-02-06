@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/cvPets"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    card_view:cardCornerRadius="@dimen/corner_radius_cardview">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/card_view_padding">
+
+        <ImageView
+            android:id="@+id/imgPet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dog01"
+            android:layout_gravity="center_horizontal"
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/btnLike"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:background="@drawable/hueso_blanco"
+                    android:orientation="horizontal"
+                    />
+                <TextView
+                    android:id="@+id/tvPetname"
+                    android:layout_width="@dimen/pet_name"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_name"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvLikes"
+                    android:layout_width="@dimen/pet_likes"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_likes"
+                    android:textSize="@dimen/text_size"
+                    />
+                <ImageView
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:src="@drawable/hueso_amarillo"/>
+            </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

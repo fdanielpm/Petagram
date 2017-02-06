@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="card_view_padding">10dp</dimen>
+    <dimen name="icon_size">25dp</dimen>
+    <dimen name="pet_name">220dp</dimen>
+    <dimen name="pet_likes">30dp</dimen>
+    <dimen name="elevation_actionbar">4dp</dimen>
+    <dimen name="icon_star_padding_right">10dp</dimen>
+    <dimen name="icon_star_size">48dp</dimen>
+</resources>

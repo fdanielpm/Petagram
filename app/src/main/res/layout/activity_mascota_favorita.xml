@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mascota_favorita"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fdanielpm.petagram.MascotaFavorita">
+
+    <!--
+    <include android:id="@+id/appActionBarFav"
+        layout="@layout/action_bar">
+    </include>
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/card_view_padding"
+        >
+    <ImageView
+        android:id="@+id/imgPetFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dog01"
+        android:layout_gravity="center_horizontal"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btnLikeFav"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:background="@drawable/hueso_blanco"
+            android:orientation="horizontal"
+            />
+        <TextView
+            android:id="@+id/tvPetnameFav"
+            android:layout_width="@dimen/pet_name"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_name"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvLikesFav"
+            android:layout_width="@dimen/pet_likes"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_likes"
+            android:textSize="@dimen/text_size"
+            />
+        <ImageView
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/hueso_amarillo"/>
+    </LinearLayout>
+
+</LinearLayout>
+</RelativeLayout>
