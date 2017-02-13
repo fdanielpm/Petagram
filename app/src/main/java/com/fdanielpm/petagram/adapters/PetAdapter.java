@@ -1,4 +1,4 @@
-package com.fdanielpm.petagram;
+package com.fdanielpm.petagram.adapters;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.fdanielpm.petagram.pojo.Pet;
+import com.fdanielpm.petagram.R;
 
 import java.util.List;
 

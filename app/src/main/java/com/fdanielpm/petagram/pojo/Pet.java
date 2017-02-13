@@ -1,4 +1,4 @@
-package com.fdanielpm.petagram;
+package com.fdanielpm.petagram.pojo;
 
 /**
  * Created by darkp on 5/02/17.
