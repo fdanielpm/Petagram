@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.fdanielpm.petagram.MainActivity">
 <!--
     <include android:id="@+id/appActionBar"
         layout="@layout/action_bar">
     </include>
     -->
-    <LinearLayout
-        android:id="@+id/llfavorito"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <ImageButton
-            android:id="@+id/btnStar"
-            android:layout_width="@dimen/icon_star_size"
-            android:layout_height="@dimen/icon_star_size"
-            android:background="@drawable/star"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:paddingRight="@dimen/icon_star_padding_right"
-            android:onClick="goToFavoritePet"
-            />
-    </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvPet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/llfavorito"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        >
 
-        </android.support.v7.widget.RecyclerView>
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-</RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/idToolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+    </android.support.design.widget.TabLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+        </android.support.v4.view.ViewPager>
+
+</android.support.design.widget.CoordinatorLayout>

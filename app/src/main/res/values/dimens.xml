@@ -11,4 +11,5 @@
     <dimen name="elevation_actionbar">4dp</dimen>
     <dimen name="icon_star_padding_right">10dp</dimen>
     <dimen name="icon_star_size">48dp</dimen>
+    <dimen name="bio_size">40dp</dimen>
 </resources>

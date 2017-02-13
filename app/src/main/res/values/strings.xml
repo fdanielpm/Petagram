@@ -2,4 +2,15 @@
     <string name="app_name">Petagram</string>
     <string name="pet_name">Scoby Doo</string>
     <string name="pet_likes">0</string>
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_star">Favoritos</string>
+    <string name="capture_email">Correo</string>
+    <string name="capture_nombre">Nombre</string>
+    <string name="capture_comment">Comentario</string>
+    <string name="btn_send">Enviar Comentario</string>
+    <string name="bio">Daniel Perez, Puebla, Pue. Software Developer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
