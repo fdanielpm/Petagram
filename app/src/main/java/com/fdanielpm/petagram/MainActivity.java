@@ -78,11 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.mStar:
                 List<Pet> mascotas = new ArrayList<>();
-                mascotas.add( new Pet("Scoby Doo",R.drawable.dog01,1) );
-                mascotas.add( new Pet("Benji",R.drawable.dog02,3) );
-                mascotas.add( new Pet("Pulgoso",R.drawable.dog03,0) );
-                mascotas.add( new Pet("Odie",R.drawable.dog04,5) );
-                mascotas.add( new Pet("Snoppy",R.drawable.dog05,2) );
+                mascotas.add( new Pet(1,"Scoby Doo",R.drawable.dog01,1) );
+                mascotas.add( new Pet(2,"Benji",R.drawable.dog02,3) );
+                mascotas.add( new Pet(3,"Pulgoso",R.drawable.dog03,0) );
+                mascotas.add( new Pet(4,"Odie",R.drawable.dog04,5) );
+                mascotas.add( new Pet(5,"Snoppy",R.drawable.dog05,2) );
+                mascotas.add( new Pet(6,"Beethoven",R.drawable.dog06,2) );
                 if( mascotas !=null && !mascotas.isEmpty() ){
                     Pet max = mascotas.get(0);
                     for(Pet p: mascotas ){
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     if( max == null ){
-                        max = new Pet("Scoby Doo",R.drawable.dog01,1);
+                        max = new Pet(1,"Scoby Doo",R.drawable.dog01,1);
                     }
                     Intent intentFav = new Intent(this,MascotaFavorita.class);
                     intentFav.putExtra("name",max.getName());

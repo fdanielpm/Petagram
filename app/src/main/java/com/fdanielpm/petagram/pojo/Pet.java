@@ -5,12 +5,15 @@ package com.fdanielpm.petagram.pojo;
  */
 
 public class Pet {
-
+    private int id;
     private String name;
     private int photo;
     private int likes;
 
-    public Pet(String name, int photo, int likes) {
+    public Pet(){ }
+
+    public Pet(int id, String name, int photo, int likes) {
+        this.id = id;
         this.name = name;
         this.photo = photo;
         this.likes = likes;
@@ -42,5 +45,13 @@ public class Pet {
 
     public void likes(){
         likes++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

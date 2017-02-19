@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fdanielpm.petagram.db.BaseDatos;
+import com.fdanielpm.petagram.db.ConstructorPets;
 import com.fdanielpm.petagram.pojo.Pet;
 import com.fdanielpm.petagram.R;
 
@@ -47,6 +49,8 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
                 pet.likes();
                 Toast.makeText(activity,"Diste like a " + pet.getName() ,Toast.LENGTH_LONG).show();
                 holder.tvLikes.setText( String.valueOf( pet.getLikes() ));
+                ConstructorPets cp = new ConstructorPets( activity );
+                cp.petLikes( pet );
             }
         });
         holder.tvLikes.setText( String.valueOf( pet.getLikes() ) );

@@ -59,7 +59,7 @@ public class PerfilFragment extends Fragment {
     private void initPetList(){
         mascotas = new ArrayList<>();
         for(int i=0;i<9;i++) {
-            mascotas.add(new Pet("Scoby Doo", R.drawable.dog01, 1));
+            mascotas.add(new Pet(1,"Scoby Doo", R.drawable.dog01, 1));
         }
 
     }
