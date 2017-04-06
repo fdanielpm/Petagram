@@ -50,7 +50,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             Cursor registros = db.rawQuery(query, null);
             while (registros.moveToNext()) {
                 Pet p = new Pet();
-                p.setId(registros.getInt(0));
+                p.setId( String.valueOf( registros.getInt(0) ));
                 p.setName(registros.getString(1));
                 p.setPhoto(registros.getInt(2));
                 p.setLikes(registros.getInt(3));
@@ -94,7 +94,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             Cursor registros = db.rawQuery(query, null);
             while (registros.moveToNext()) {
                 Pet p = new Pet();
-                p.setId(registros.getInt(0));
+                p.setId( String.valueOf( registros.getInt(0) ) );
                 p.setName(registros.getString(1));
                 p.setPhoto(registros.getInt(2));
                 p.setLikes(registros.getInt(3));

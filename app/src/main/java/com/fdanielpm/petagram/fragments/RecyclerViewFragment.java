@@ -23,7 +23,7 @@ import java.util.List;
  */
 
 public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
-    //private List<Pet> mascotas;
+    private List<Pet> mascotas;
     private RecyclerView petList;
     private RecyclerViewFragmentPresenter recyclerViewFragmentPresenter;
 
@@ -35,23 +35,23 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
         petList = (RecyclerView) v.findViewById( R.id.rvPet );
 
         recyclerViewFragmentPresenter = new RecyclerViewFragmentPresenter(this, getContext() );
-       // initPetList();
+        initPetList();
         //intAdapter();
         return v;
     }
-/*
+
     private void intAdapter(){
     }
     private void initPetList(){
         mascotas = new ArrayList<>();
-        mascotas.add( new Pet(1,"Scoby Doo",R.drawable.dog01,1) );
-        mascotas.add( new Pet(2,"Benji",R.drawable.dog02,3) );
-        mascotas.add( new Pet(3,"Pulgoso",R.drawable.dog03,0) );
-        mascotas.add( new Pet(4,"Odie",R.drawable.dog04,5) );
-        mascotas.add( new Pet(5,"Snoppy",R.drawable.dog05,2) );
-        mascotas.add( new Pet(6,"Beetoven",R.drawable.dog06,2) );
+        mascotas.add( new Pet("1","Scoby Doo",R.drawable.dog01,1) );
+        mascotas.add( new Pet("2","Benji",R.drawable.dog02,3) );
+        mascotas.add( new Pet("3","Pulgoso",R.drawable.dog03,0) );
+        mascotas.add( new Pet("4","Odie",R.drawable.dog04,5) );
+        mascotas.add( new Pet("5","Snoppy",R.drawable.dog05,2) );
+        mascotas.add( new Pet("6","Beetoven",R.drawable.dog06,2) );
     }
-*/
+
     @Override
     public void generarLinearLayoutVertical() {
         LinearLayoutManager llm = new LinearLayoutManager( getActivity() );

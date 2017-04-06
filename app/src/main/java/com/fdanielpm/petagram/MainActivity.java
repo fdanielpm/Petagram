@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.fdanielpm.petagram.adapters.PageAdapter;
 import com.fdanielpm.petagram.adapters.PetAdapter;
@@ -18,6 +19,9 @@ import com.fdanielpm.petagram.fragments.PerfilFragment;
 import com.fdanielpm.petagram.fragments.RecyclerViewFragment;
 import com.fdanielpm.petagram.pojo.Pet;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
         if( toolbar!=null){
             setSupportActionBar(toolbar);
         }
-
+        String account = readAccountInfo();
+        if( account !=null && !account.isEmpty() ) {
+            Toast.makeText(this, "Account:" + account, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void setUpViewPager(){
@@ -78,12 +85,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.mStar:
                 List<Pet> mascotas = new ArrayList<>();
-                mascotas.add( new Pet(1,"Scoby Doo",R.drawable.dog01,1) );
-                mascotas.add( new Pet(2,"Benji",R.drawable.dog02,3) );
-                mascotas.add( new Pet(3,"Pulgoso",R.drawable.dog03,0) );
-                mascotas.add( new Pet(4,"Odie",R.drawable.dog04,5) );
-                mascotas.add( new Pet(5,"Snoppy",R.drawable.dog05,2) );
-                mascotas.add( new Pet(6,"Beethoven",R.drawable.dog06,2) );
+
+                mascotas.add( new Pet("1","Scoby Doo",R.drawable.dog01,1) );
+                mascotas.add( new Pet("2","Benji",R.drawable.dog02,3) );
+                mascotas.add( new Pet("3","Pulgoso",R.drawable.dog03,0) );
+                mascotas.add( new Pet("4","Odie",R.drawable.dog04,5) );
+                mascotas.add( new Pet("5","Snoppy",R.drawable.dog05,2) );
+                mascotas.add( new Pet("6","Beethoven",R.drawable.dog06,2) );
+
                 if( mascotas !=null && !mascotas.isEmpty() ){
                     Pet max = mascotas.get(0);
                     for(Pet p: mascotas ){
@@ -92,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     if( max == null ){
-                        max = new Pet(1,"Scoby Doo",R.drawable.dog01,1);
+                        max = new Pet("1","Scoby Doo",R.drawable.dog01,1);
                     }
                     Intent intentFav = new Intent(this,MascotaFavorita.class);
                     intentFav.putExtra("name",max.getName());
@@ -103,11 +112,30 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 break;
+            case R.id.mAccount:
+                Intent intentAccount = new Intent(this, AccountActivity.class);
+                startActivity(intentAccount);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
 
+    private String readAccountInfo(){
+        String account = null;
+        try {
+            FileInputStream in = openFileInput("account.txt");
+            BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(in) );
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                sb.append(line);
+            }
+            account = sb.toString();
+        }catch (Exception e){
 
+        }
+        return account;
+    }
 
 }

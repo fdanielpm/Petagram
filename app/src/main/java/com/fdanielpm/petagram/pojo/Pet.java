@@ -5,18 +5,35 @@ package com.fdanielpm.petagram.pojo;
  */
 
 public class Pet {
-    private int id;
+    private String id;
     private String name;
+    private String urlPhoto;
     private int photo;
     private int likes;
 
     public Pet(){ }
 
-    public Pet(int id, String name, int photo, int likes) {
+    public Pet(String id, String name, String urlPhoto, int likes) {
+        this.id = id;
+        this.name = name;
+        this.urlPhoto = urlPhoto;
+        this.likes = likes;
+    }
+
+    public Pet(String id, String name, int photo, int likes) {
         this.id = id;
         this.name = name;
         this.photo = photo;
         this.likes = likes;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -25,6 +42,14 @@ public class Pet {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
     }
 
     public int getPhoto() {
@@ -45,13 +70,5 @@ public class Pet {
 
     public void likes(){
         likes++;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

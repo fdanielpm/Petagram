@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.fdanielpm.petagram.R;
 import com.fdanielpm.petagram.pojo.Pet;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,7 +41,11 @@ public class PetFavoriteAdapter extends RecyclerView.Adapter<PetFavoriteAdapter.
         final Pet pet = lstPets.get( position );
 
         holder.tvPetNameFav.setText( pet.getName() );
-        holder.imgPetFav.setImageResource( pet.getPhoto() );
+        //holder.imgPetFav.setImageResource( pet.getPhoto() );
+        Picasso.with(activity)
+                .load(pet.getUrlPhoto())
+                .placeholder(R.drawable.dog01)
+                .into(holder.imgPetFav);
         holder.tvLikesFav.setText( String.valueOf( pet.getLikes() ) );
     }
 

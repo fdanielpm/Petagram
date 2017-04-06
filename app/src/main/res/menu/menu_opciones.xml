@@ -11,10 +11,16 @@
         android:title="@string/menu_about"
         android:orderInCategory="2"
         ></item>
+
     <item
         android:id="@+id/mStar"
         android:title="@string/menu_star"
         android:orderInCategory="102"
         app:showAsAction="always"
         android:icon="@drawable/star"    />
+    <item
+        android:id="@+id/mAccount"
+        android:title="@string/menu_account"
+        android:orderInCategory="2"
+        ></item>
 </menu>

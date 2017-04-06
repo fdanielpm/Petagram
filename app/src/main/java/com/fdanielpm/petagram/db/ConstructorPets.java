@@ -22,14 +22,14 @@ public class ConstructorPets {
 
     public List<Pet> obtenerDatos(){
         List<Pet> mascotas = new ArrayList<>();
-        /*
-        mascotas.add( new Pet(1,"Scoby Doo",R.drawable.dog01,1) );
-        mascotas.add( new Pet(2,"Benji",R.drawable.dog02,3) );
-        mascotas.add( new Pet(3,"Pulgoso",R.drawable.dog03,0) );
-        mascotas.add( new Pet(4,"Odie",R.drawable.dog04,5) );
-        mascotas.add( new Pet(5,"Snoppy",R.drawable.dog05,2) );
-        mascotas.add( new Pet(6,"Beetoven",R.drawable.dog06,2) );
-        */
+
+        mascotas.add( new Pet("1","Scoby Doo",R.drawable.dog01,1) );
+        mascotas.add( new Pet("2","Benji",R.drawable.dog02,3) );
+        mascotas.add( new Pet("3","Pulgoso",R.drawable.dog03,0) );
+        mascotas.add( new Pet("4","Odie",R.drawable.dog04,5) );
+        mascotas.add( new Pet("5","Snoppy",R.drawable.dog05,2) );
+        mascotas.add( new Pet("6","Beetoven",R.drawable.dog06,2) );
+
         BaseDatos db = new BaseDatos(context);
         insertarPets(db);
         //return mascotas;
@@ -46,7 +46,7 @@ public class ConstructorPets {
         BaseDatos db = new BaseDatos(context);
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBaseDatos.TABLE_PET_LIKES, pet.getLikes() );
-        db.darLike(contentValues,pet.getId());
+        //db.darLike(contentValues,pet.getId());
     }
 
     public void insertarPets(BaseDatos db){

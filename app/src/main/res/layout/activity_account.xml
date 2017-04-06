@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fdanielpm.petagram.AccountActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTitleAccount"
+        android:text="@string/app_name"
+        android:textSize="@dimen/bio_size"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilCuenta">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/escribe_usuario"
+
+            />
+        <Button
+            android:text="@string/btn_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="saveAccount"
+            android:id="@+id/btnAccount" />
+    </android.support.design.widget.TextInputLayout>
+</LinearLayout>
