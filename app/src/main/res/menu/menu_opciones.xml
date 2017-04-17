@@ -23,4 +23,9 @@
         android:title="@string/menu_account"
         android:orderInCategory="2"
         ></item>
+    <item
+        android:id="@+id/mNotificaciones"
+        android:title="@string/menu_notificaciones"
+        android:orderInCategory="2"
+        ></item>
 </menu>

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.fdanielpm.petagram.IRecyclerViewMascotaFavorita;
+import com.fdanielpm.petagram.MainActivity;
 import com.fdanielpm.petagram.db.ConstructorPets;
 import com.fdanielpm.petagram.pojo.Pet;
 import com.fdanielpm.petagram.restApi.EndpointsApi;
@@ -32,7 +33,7 @@ public class RecyclerViewMascotaFavoritaPresenter implements  IRecyclerViewMasco
     public RecyclerViewMascotaFavoritaPresenter(IRecyclerViewMascotaFavorita iRecyclerViewMascotaFavorita, Context context) {
         this.iRecyclerViewMascotaFavorita = iRecyclerViewMascotaFavorita;
         this.context = context;
-       // obtenerPetsBaseDatos();
+        //obtenerPetsBaseDatos();
         obtenerMediosRecientes();
     }
 
@@ -54,7 +55,7 @@ public class RecyclerViewMascotaFavoritaPresenter implements  IRecyclerViewMasco
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonMediaRecent = restApiAdapter.construyeGsonDeserializadorMediaRecent();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaRecent);
-        Call<PetResponse> contactoResponseCall = endpointsApi.getRecentMedia();
+        Call<PetResponse> contactoResponseCall = endpointsApi.getRecentMedia(MainActivity.getAccountId());
 
         contactoResponseCall.enqueue(new Callback<PetResponse>() {
             @Override
@@ -74,4 +75,5 @@ public class RecyclerViewMascotaFavoritaPresenter implements  IRecyclerViewMasco
 
 
     }
+
 }

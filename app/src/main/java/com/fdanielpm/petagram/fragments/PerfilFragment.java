@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fdanielpm.petagram.MainActivity;
 import com.fdanielpm.petagram.R;
 import com.fdanielpm.petagram.adapters.PetAdapter;
 import com.fdanielpm.petagram.adapters.PetDetailAdapter;
@@ -55,7 +56,7 @@ public class PerfilFragment extends Fragment {
         ivPetPerfilDetalle = (ImageView) v.findViewById(R.id.ivPetPerfilDetalle);
         tvPetPerfilDetalle = (TextView) v.findViewById(R.id.tvPetPerfilDetalle);
 
-        tvPetPerfilDetalle.setText("Scoby Doo");
+        tvPetPerfilDetalle.setText("Scoby Doo2");
         ivPetPerfilDetalle.setImageResource(  R.drawable.dog01 );
 
         petList = (RecyclerView) v.findViewById( R.id.rvPetDetail );
@@ -71,7 +72,10 @@ public class PerfilFragment extends Fragment {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonMediaRecent = restApiAdapter.construyeGsonDeserializadorMediaRecent();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaRecent);
-        Call<PetResponse> petResponseCall = endpointsApi.getRecentMedia();
+
+        String instagramId = MainActivity.getAccountId();
+
+        Call<PetResponse> petResponseCall = endpointsApi.getRecentMedia( instagramId );
 
         petResponseCall.enqueue(new Callback<PetResponse>() {
             @Override
@@ -82,7 +86,7 @@ public class PerfilFragment extends Fragment {
 
             @Override
             public void onFailure(Call<PetResponse> call, Throwable t) {
-                Toast.makeText( getContext(), "¡Al pasó en la conexión! Intenta de nuevo", Toast.LENGTH_LONG).show();
+                Toast.makeText( getContext(), "¡Algo pasó en la conexión! Intenta de nuevo", Toast.LENGTH_LONG).show();
                 Log.e("FALLO LA CONEXION", t.toString());
             }
         });

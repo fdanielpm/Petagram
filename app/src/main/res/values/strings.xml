@@ -6,10 +6,12 @@
     <string name="menu_about">Acerca de</string>
     <string name="menu_star">Favoritos</string>
     <string name="menu_account">Configurar Cuenta</string>
+    <string name="menu_notificaciones">Recibir Notificaciones</string>
     <string name="capture_email">Correo</string>
     <string name="capture_nombre">Nombre</string>
     <string name="capture_comment">Comentario</string>
     <string name="btn_send">Enviar Comentario</string>
+    <string name="btn_recibir_notificacion">Recibir Notificaciones</string>
     <string name="bio">Daniel Perez, Puebla, Pue. Software Developer</string>
     <string name="escribe_usuario">Escribe tu usuario</string>
     <string name="btn_account">Guardar Cuenta</string>

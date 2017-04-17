@@ -22,11 +22,11 @@ public class PetDeserializador implements JsonDeserializer<PetResponse> {
         PetResponse petResponse = gson.fromJson(json, PetResponse.class);
         JsonArray petResponseData = json.getAsJsonObject().getAsJsonArray(JsonKeys.MEDIA_RESPONSE_ARRAY);
 
-        petResponse.setMascotas(deserializarContactoDeJson(petResponseData));
+        petResponse.setMascotas(deserializarPetDeJson(petResponseData));
         return petResponse;
     }
 
-    private ArrayList<Pet> deserializarContactoDeJson(JsonArray petResponseData){
+    private ArrayList<Pet> deserializarPetDeJson(JsonArray petResponseData){
         ArrayList<Pet> pets = new ArrayList<>();
         for (int i = 0; i < petResponseData.size() ; i++) {
             JsonObject petResponseDataObject = petResponseData.get(i).getAsJsonObject();

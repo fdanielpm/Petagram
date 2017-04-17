@@ -42,10 +42,12 @@ public class PetDetailAdapter extends RecyclerView.Adapter<PetDetailAdapter.PetV
 
         holder.tvPetname.setText( pet.getName() );
         //holder.imgPet.setImageResource( pet.getPhoto() );
+
         Picasso.with(activity)
                 .load( pet.getUrlPhoto() )
                 .placeholder(R.drawable.dog01)
                 .into(holder.imgPet);
+
         holder.tvLikes.setText( String.valueOf( pet.getLikes() ) );
     }
 

@@ -1,6 +1,7 @@
 package com.fdanielpm.petagram;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,6 +59,10 @@ public class AccountActivity extends AppCompatActivity {
                             fileOutputStream = openFileOutput("account.txt", Context.MODE_PRIVATE);
                             fileOutputStream.write( accountId.getBytes() );
                             Toast.makeText(AccountActivity.this,"Cuenta configurada ID=" + accountId ,Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(getBaseContext(), MainActivity.class);
+                            i.putExtra("instagram_account_id", accountId);
+                            startActivity( i );
+
                         }catch(Exception e){
                             Toast.makeText(AccountActivity.this,"Ha ocurrido un error",Toast.LENGTH_SHORT).show();
                         }finally {
@@ -80,7 +85,7 @@ public class AccountActivity extends AppCompatActivity {
             }catch(Throwable t) {
                 t.printStackTrace();
             }
-            finish();
+
         }else{
             Toast.makeText(AccountActivity.this,"No ha capturado su cuenta",Toast.LENGTH_SHORT).show();
         }

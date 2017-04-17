@@ -4,6 +4,7 @@ import com.fdanielpm.petagram.restApi.ConstantesRestApi;
 import com.fdanielpm.petagram.restApi.EndpointsApi;
 import com.fdanielpm.petagram.restApi.deserializador.AccountDeserializador;
 import com.fdanielpm.petagram.restApi.deserializador.PetDeserializador;
+import com.fdanielpm.petagram.restApi.deserializador.UsuarioDeserializador;
 import com.fdanielpm.petagram.restApi.model.AccountResponse;
 import com.fdanielpm.petagram.restApi.model.PetResponse;
 import com.google.gson.Gson;
@@ -34,5 +35,19 @@ public class RestApiAdapter {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(AccountResponse.class, new AccountDeserializador());
         return gsonBuilder.create();
+    }
+
+    public Gson construyeDeserializadorUser(){
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(UsuarioDeserializador.class, new UsuarioDeserializador());
+        return gsonBuilder.create();
+    }
+
+    public EndpointsApi establecerConexionRestApiFirebase(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantesRestApi.ROOT_URL_FIREBASE)
+                .addConverterFactory(GsonConverterFactory.create( ))
+                .build();
+        return retrofit.create(EndpointsApi.class);
     }
 }

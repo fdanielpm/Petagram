@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private static String accountId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +42,23 @@ public class MainActivity extends AppCompatActivity {
         tabLayout =  (TabLayout) findViewById(R.id.tabLayout);
         viewPager =  (ViewPager) findViewById(R.id.viewPager);
 
+        if(  getIntent() != null && getIntent().getExtras()!=null ) {
+            Bundle extras = getIntent().getExtras();
+            accountId = extras.getString("instagram_account_id");
+        }else {
+            accountId = readAccountInfo();
+        }
+        if( accountId !=null && !accountId.isEmpty() ) {
+            Toast.makeText(this, "Account:" + accountId, Toast.LENGTH_SHORT).show();
+        }
+
         setUpViewPager();
 
         if( toolbar!=null){
             setSupportActionBar(toolbar);
         }
-        String account = readAccountInfo();
-        if( account !=null && !account.isEmpty() ) {
-            Toast.makeText(this, "Account:" + account, Toast.LENGTH_SHORT).show();
-        }
+
+
     }
 
     private void setUpViewPager(){
@@ -116,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentAccount = new Intent(this, AccountActivity.class);
                 startActivity(intentAccount);
                 break;
+            case R.id.mNotificaciones:
+                Intent intentNotificacion = new Intent(this, NotificacionActivity.class);
+                intentNotificacion.putExtra("instagram_account_id",accountId);
+                startActivity(intentNotificacion);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -138,4 +152,7 @@ public class MainActivity extends AppCompatActivity {
         return account;
     }
 
+    public static String getAccountId(){
+        return accountId;
+    }
 }
